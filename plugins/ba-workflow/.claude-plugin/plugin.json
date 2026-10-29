@@ -1,0 +1,7 @@
+{
+  "name": "ba-workflow",
+  "version": "0.3.0",
+  "description": "Workflow cho team Business Analyst: intake, backbone, stories, FRD/SRS, test case, kiểm nhất quán, gate + duyệt + baseline, impact, package, export DOCX/Confluence, retro, checkpoint.",
+  "author": { "name": "Hung" },
+  "keywords": ["business-analyst", "requirements", "user-story", "srs", "traceability", "test-cases"]
+}

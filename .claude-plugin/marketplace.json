@@ -1,0 +1,11 @@
+{
+  "name": "ba-team",
+  "owner": { "name": "Hung" },
+  "plugins": [
+    {
+      "name": "ba-workflow",
+      "source": "./plugins/ba-workflow",
+      "description": "Workflow BA (/ba-start, /ba-collab): test case, kiểm nhất quán, gate, duyệt, baseline, export, retro, checkpoint."
+    }
+  ]
+}
