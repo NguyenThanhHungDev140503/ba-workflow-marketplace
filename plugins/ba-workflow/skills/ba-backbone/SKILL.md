@@ -8,8 +8,8 @@ description: Bước 2 của workflow BA - dựng cấu trúc cốt lõi dự á
 Nạp skill `ba-conventions` trước. Đầu vào: `ba-workspace/<slug>/00-intake/`. Thiếu thư mục này thì dừng và gợi ý chạy intake. `01-backbone/` đã có nội dung thì không ghi đè: hỏi cập nhật hay dừng.
 
 ## Tạo trong `ba-workspace/<slug>/01-backbone/`
-- `vision-scope.md`: mục tiêu nghiệp vụ (BR-001...), in-scope, out-of-scope, giả định, ràng buộc.
-- `modules.md`: danh sách module, mỗi module có `slug`, mô tả 1-2 câu, actor chính, các RAW-ID thuộc về nó, phụ thuộc module khác. Đây là danh sách để thành viên "nhận module".
+- `vision-scope.md`: mục tiêu nghiệp vụ (BR-001...), in-scope, out-of-scope, giả định, ràng buộc, và dòng thiết lập `flow-granularity: use-case` (hoặc `quy-trình`; xem "Bộ diagram" ở `ba-conventions`; hỏi team code thích mức nào nếu chưa rõ, mặc định `use-case`).
+- `modules.md`: bảng module, cột `slug | Mô tả | Actor | RAW | Phụ thuộc | flow`. `flow` là `use-case` hoặc `quy-trình` (độ chi tiết diagram của module; điền theo `flow-granularity` của dự án, chỉnh sau bằng `ba-guide` khi đã có stories). Đây là danh sách để thành viên "nhận module".
 - `actors.md`: actor/vai trò và quyền ở mức nghiệp vụ.
 - `process-flows.md`: **D0 bản đồ module** (`flowchart LR`, nút là slug module, mũi tên là phụ thuộc, hệ thống ngoài trong `subgraph`; phải khớp cột "Phụ thuộc" của `modules.md`), rồi luồng chính mức dự án dạng Mermaid, một luồng mỗi quy trình lớn. Luồng chi tiết từng module để `/ba-start flow`.
 - `status.md`: bảng theo `ba-conventions`, mỗi module một dòng, trạng thái `Chưa nhận`, owner/branch để trống.

@@ -68,7 +68,12 @@ echo "$(date +%F),<event>,<module>,<detail>" >> ba-workspace/<slug>/events.csv
 Sự kiện không thuộc module nào (intake, package, export toàn dự án) để cột `module` là `-`. Thiếu sự kiện thì ghi thiếu, không suy đoán thay.
 
 ## Bộ diagram (tối đa 5 loại; chỉ Mermaid)
-Chỉ vẽ khi sơ đồ chứa thông tin mà bảng/văn bản không nói rõ bằng. Mỗi sơ đồ ≤ 15 nút (quá thì tách theo quy trình con), trả lời đúng một câu hỏi, và mọi phần tử gắn ID nguồn (`US-001/S1`, `FR-005`, endpoint). Không vẽ sơ đồ lớp, deployment, activity trùng flow, hay sơ đồ riêng cho từng story.
+Chỉ vẽ khi sơ đồ chứa thông tin mà bảng/văn bản không nói rõ bằng. Mỗi sơ đồ ≤ 15 nút (quá thì tách theo quy trình con), trả lời đúng một câu hỏi, và mọi phần tử gắn ID nguồn (`US-001/S1`, `FR-005`, endpoint). Không vẽ sơ đồ lớp, deployment, hay activity trùng flow.
+
+**Độ chi tiết của D1/D3** cấu hình được theo từng module. Thứ tự ưu tiên, cao xuống thấp: (1) tham số lệnh `/ba-start flow --per-use-case` hoặc `--per-process` (một lần chạy); (2) cột `flow` của module trong `01-backbone/modules.md`; (3) dòng `flow-granularity:` trong `01-backbone/vision-scope.md` (mặc định toàn dự án); (4) `use-case`. Giá trị: `use-case` hoặc `quy-trình`. `ba-guide` giúp chọn giá trị theo số liệu của từng module.
+- `use-case` (mặc định): mỗi story/use case một D1, kèm D3 nếu có bước vượt ranh giới. Story **đơn giản** (dưới 4 scenario, một actor, không vượt ranh giới) chỉ cần một dòng trong bảng "Không vẽ" của `flows.md`, không cần sơ đồ.
+- `quy-trình`: mỗi quy trình nghiệp vụ một D1, gộp nhiều story.
+Bước dùng chung ≥ 2 sơ đồ (kiểm quyền, trừ phép...) vẽ một lần thành sub-flow ở mục "Dùng chung" rồi tham chiếu `↪ SF-nn`, không vẽ lặp.
 
 | # | Diagram | File | Vẽ khi | Quy ước để máy kiểm |
 |---|---|---|---|---|

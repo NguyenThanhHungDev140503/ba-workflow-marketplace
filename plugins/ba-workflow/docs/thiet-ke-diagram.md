@@ -2,6 +2,10 @@
 
 Trạng thái: **đã cài đặt trong 0.5.0** (khác thiết kế: K3 dùng quy ước `ST:A>B` ở cột Ghi chú của TC; K2 so với dòng `enum status:` dưới sơ đồ ER; `ba-export`/`ba-package` không đổi). Đã thử K2/K3/K4/K6 trên module mẫu có lỗi cố ý; chưa thử trên module thật. Căn cứ: phản hồi sau khi dùng thử ("diagram đơn giản, tính năng nhiều"), và hiện trạng plugin 0.4.0.
 
+**Cập nhật 0.5.2:** độ chi tiết đặt được theo từng module (cột `flow` trong `modules.md`; ưu tiên: tham số lệnh > cột `flow` > `flow-granularity` toàn dự án > `use-case`), và `ba-guide` có mục "Cấu hình": đo số liệu từng module, hỏi tối đa 2 câu, gợi ý rồi ghi vào `modules.md` khi người dùng đồng ý.
+
+**Cập nhật 0.5.1:** thêm thiết lập `flow-granularity` (`use-case` mặc định, hoặc `quy-trình`) trong `vision-scope.md` thay cho luật "không vẽ riêng từng story": mỗi use case một D1, story đơn giản (dưới 4 scenario, một actor, không vượt ranh giới) chỉ ghi vào bảng "Không vẽ", bước lặp tách thành sub-flow `SF-nn`. Lý do: team code làm việc theo use case nên sơ đồ 1-1 dễ nhận và review; chi phí được giữ bằng quy tắc story đơn giản và kiểm bước lặp.
+
 ## 1. Hiện trạng
 | Nơi | Diagram | Vấn đề |
 |---|---|---|
