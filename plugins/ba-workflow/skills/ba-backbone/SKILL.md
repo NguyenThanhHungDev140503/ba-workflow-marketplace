@@ -11,7 +11,7 @@ Nạp skill `ba-conventions` trước. Đầu vào: `ba-workspace/<slug>/00-inta
 - `vision-scope.md`: mục tiêu nghiệp vụ (BR-001...), in-scope, out-of-scope, giả định, ràng buộc.
 - `modules.md`: danh sách module, mỗi module có `slug`, mô tả 1-2 câu, actor chính, các RAW-ID thuộc về nó, phụ thuộc module khác. Đây là danh sách để thành viên "nhận module".
 - `actors.md`: actor/vai trò và quyền ở mức nghiệp vụ.
-- `process-flows.md`: luồng chính dạng Mermaid (flowchart hoặc sequence), một luồng mỗi quy trình lớn.
+- `process-flows.md`: **D0 bản đồ module** (`flowchart LR`, nút là slug module, mũi tên là phụ thuộc, hệ thống ngoài trong `subgraph`; phải khớp cột "Phụ thuộc" của `modules.md`), rồi luồng chính mức dự án dạng Mermaid, một luồng mỗi quy trình lớn. Luồng chi tiết từng module để `/ba-start flow`.
 - `status.md`: bảng theo `ba-conventions`, mỗi module một dòng, trạng thái `Chưa nhận`, owner/branch để trống.
 - `ba-workspace/<slug>/traceability.csv`: theo schema trong `ba-conventions`, một dòng `RAW,BR,module,,,,` (7 cột) cho mỗi liên kết. Mọi RAW-ID phải map vào một module hoặc `OUT-OF-SCOPE`.
 

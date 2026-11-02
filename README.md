@@ -30,7 +30,7 @@ Hai vai: **Lead BA** dựng khung và duyệt, **BA** nhận từng module.
 | 3 | `/ba-collab Tôi nhận module <slug>` | branch `ba/<slug>/<module>`, ghi owner |
 | 4 | `/ba-start stories --module <slug>` | user story + Gherkin, mỗi scenario có ID |
 | 5a | `/ba-start frd` / `srs` (`--module`) | đặc tả nghiệp vụ / kỹ thuật |
-| 5a' | `/ba-start flow --module <slug>` | luồng chi tiết module (Mermaid swimlane, nhánh lỗi), đo phủ scenario/FR |
+| 5a' | `/ba-start flow --module <slug>` | diagram cho dev (swimlane, máy trạng thái, trình tự; chỉ vẽ loại đủ điều kiện), đo phủ scenario/FR |
 | 5b | `/ba-start tests --module <slug>` | test case từ AC, đo độ phủ |
 | 5c | `/ba-start check [--module <slug>]` | kiểm nhất quán chéo, lỗi H/M/L |
 | 6a | `/ba-start gate --module <slug>` | PASS / CONDITIONAL / REJECT |
@@ -45,6 +45,7 @@ Trạng thái module: `Chưa nhận` → `Đang soạn` → `Chờ review` → `
 
 ## Điểm chính
 - **Truy vết:** `traceability.csv` nối RAW → BR → US → FR/NFR → TC; mọi bước cập nhật.
+- **Bộ diagram (tối đa 5 loại):** bản đồ module, luồng swimlane, máy trạng thái, trình tự, ER; mỗi loại có điều kiện vẽ, giới hạn 15 nút, và được kiểm khớp với nhau (trạng thái, endpoint, test, phụ thuộc) bằng `/ba-start check`.
 - **Gate:** chấm 6 chiều, đo bằng lệnh; còn câu hỏi chặn thì không thể PASS.
 - **Baseline + hook `guard`:** duyệt module ghi hash vào `baselines.csv`; hook hỏi xác nhận trước khi sửa file đã duyệt. Hook không bắt lệnh sửa qua Bash (`sed -i`).
 - **An toàn:** không bịa số liệu (thiếu thì tạo câu hỏi mở), không tự `git push`, mọi thao tác ghi ra ngoài (Confluence) cần xác nhận, không lưu token.

@@ -11,7 +11,7 @@ Nạp skill `ba-conventions` trước. Tham số: `--module <slug>` (bắt buộ
 1. Mỗi scenario có ít nhất 1 TC. Happy -> `HP`; edge -> `BV` hoặc `ST`; error -> `ER` hoặc `AZ`.
 2. Mỗi trường có ngưỡng/độ dài/khoảng ngày trong story hoặc spec -> bộ biên `min-1, min, min+1, max-1, max, max+1` (loại giá trị không có nghĩa, vd độ dài âm). Chỉ dùng con số có trong nguồn.
 3. Mỗi vai trò trong ma trận quyền -> ít nhất 1 TC `AZ` được phép và 1 TC bị từ chối.
-4. Mỗi chuyển trạng thái trong state diagram, kể cả chuyển không hợp lệ (vd duyệt hai lần) -> `ST`.
+4. Mỗi mũi tên của D2 trong `spec/flows.md` (hoặc state diagram trong FRD nếu chưa có D2), kể cả chuyển không hợp lệ bị từ chối (vd duyệt hai lần) -> `ST`. Cột Ghi chú ghi `ST:A>B` (hợp lệ) hoặc `ST:A>B!` (bị từ chối) để `check` đối chiếu (K3).
 5. Quy tắc dùng chung dữ liệu giữa module (spec có nêu) -> `DI`.
 6. Mỗi NFR có số đo -> 1 TC `PF` nêu tiêu chí đo, không viết kịch bản tải.
 7. Chỗ thiếu số hoặc thiếu kết quả mong đợi: không bịa. Ghi Q-ID vào `open-questions.md`, TC đánh dấu `[chờ Q-xxx]` trong cột Ghi chú.

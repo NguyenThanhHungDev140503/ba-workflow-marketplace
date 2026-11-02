@@ -67,6 +67,36 @@ echo "$(date +%F),<event>,<module>,<detail>" >> ba-workspace/<slug>/events.csv
 
 Sự kiện không thuộc module nào (intake, package, export toàn dự án) để cột `module` là `-`. Thiếu sự kiện thì ghi thiếu, không suy đoán thay.
 
+## Bộ diagram (tối đa 5 loại; chỉ Mermaid)
+Chỉ vẽ khi sơ đồ chứa thông tin mà bảng/văn bản không nói rõ bằng. Mỗi sơ đồ ≤ 15 nút (quá thì tách theo quy trình con), trả lời đúng một câu hỏi, và mọi phần tử gắn ID nguồn (`US-001/S1`, `FR-005`, endpoint). Không vẽ sơ đồ lớp, deployment, activity trùng flow, hay sơ đồ riêng cho từng story.
+
+| # | Diagram | File | Vẽ khi | Quy ước để máy kiểm |
+|---|---|---|---|---|
+| D0 | Bản đồ module (`flowchart LR`) | `01-backbone/process-flows.md` | luôn | nút là slug module; mũi tên = phụ thuộc, khớp cột "Phụ thuộc" của `modules.md` |
+| D1 | Luồng swimlane (`flowchart`, `subgraph` theo actor) | `spec/flows.md` | mỗi quy trình nghiệp vụ | nút gắn `[US-nnn/Sn]`/`[FR-nnn]`; gọi module khác viết `→ <slug>` |
+| D2 | Máy trạng thái (`stateDiagram-v2`) | `spec/flows.md` | thực thể có trường trạng thái ≥ 3 giá trị | tên trạng thái là mã enum không dấu cách (`PENDING`); mũi tên `A --> B: sự kiện` |
+| D3 | Trình tự (`sequenceDiagram`, ≤ 8 thông điệp) | `spec/flows.md` | bước vượt ranh giới: module khác, hệ thống ngoài, bất đồng bộ | thông điệp ghi `METHOD /path` đúng như bảng API của SRS, kèm mã lỗi nhánh chính |
+| D4 | ER (`erDiagram`) | `spec/srs.md` | module sở hữu dữ liệu | cạnh có bội số; ngay dưới sơ đồ có dòng `enum status: PENDING \| APPROVED \| ...`; thực thể của module khác chỉ là stub |
+
+Không đủ điều kiện kích hoạt thì ghi vào mục "Không vẽ" của `flows.md` kèm lý do. Mẫu tối thiểu:
+
+```mermaid
+flowchart LR
+  A["don-nghi-phep"] --> B["so-du-phep"]
+```
+```mermaid
+stateDiagram-v2
+  [*] --> PENDING
+  PENDING --> APPROVED: manager_approve
+  PENDING --> CANCELLED: owner_cancel
+```
+```mermaid
+sequenceDiagram
+  Client->>API: POST /leave-requests
+  API-->>Client: 400 INVALID_DATE_RANGE
+```
+Test case cho chuyển trạng thái (`ST`) ghi `ST:PENDING>APPROVED` ở cột Ghi chú; chuyển không hợp lệ bị từ chối ghi `ST:APPROVED>PENDING!`.
+
 ## Từ mơ hồ (không có số đo thì không được vào story/spec)
 nhanh, chậm, dễ dùng, thân thiện, linh hoạt, vài, nhiều, ít, sớm, kịp thời, an toàn, ổn định, hiệu quả, dễ mở rộng, phù hợp, tương tự, v.v., nếu cần, các loại, "và các..." .
 

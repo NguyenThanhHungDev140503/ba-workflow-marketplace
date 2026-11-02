@@ -16,7 +16,7 @@ Nạp skill `ba-conventions` trước. Tham số: `frd` hoặc `srs`, kèm `--mo
 ## SRS -> `modules/<module>/spec/srs.md`
 Chưa có `frd.md` thì tạo FRD trước (SRS dựa trên FRD), nói rõ với người dùng.
 - Mọi nội dung FRD ở dạng kiểm chứng được cho dev: dữ liệu vào/ra, validation, thông báo lỗi.
-- Mô hình dữ liệu mức logic (thực thể, thuộc tính, quan hệ; Mermaid ER).
+- Mô hình dữ liệu mức logic (thực thể, thuộc tính, quan hệ; Mermaid ER = D4 trong `ba-conventions`) nếu module sở hữu dữ liệu: khóa, bội số, thực thể module khác chỉ là stub. Ngay dưới sơ đồ ghi `enum <trường>: A | B | ...` cho mỗi trường trạng thái; giá trị phải trùng tập trạng thái của D2 trong `spec/flows.md` (nếu đã có).
 - Hợp đồng API ở mức endpoint, request/response, mã lỗi (không dựng code).
 - Yêu cầu phi chức năng `NFR-xxx` có số đo: hiệu năng, bảo mật, audit log, khả năng dùng offline nếu liên quan.
 - Ma trận truy vết FR/NFR -> US -> BR.
