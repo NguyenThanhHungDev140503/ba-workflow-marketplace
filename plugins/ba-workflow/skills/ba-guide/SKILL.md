@@ -21,6 +21,7 @@ Nạp skill `ba-conventions` trước. Mục tiêu: xác định đang ở đâu
 | BA chưa có branch module | Liệt kê module `Chưa nhận` -> `/ba-collab Tôi nhận module <slug>` |
 | Module `Đang soạn` hoặc `Cần sửa`, thiếu stories | `/ba-start stories --module <m>` |
 | ... có stories, thiếu `spec/` | `/ba-start frd --module <m>` rồi `srs` |
+| ... có FRD, thiếu `spec/flows.md` | `/ba-start flow --module <m>` |
 | ... có spec, thiếu `tests/` | `/ba-start tests --module <m>` |
 | ... có tests, chưa có hoặc cũ `consistency-report.md` | `/ba-start check --module <m>` |
 | ... chưa có hoặc cũ `gate-report.md` | `/ba-start gate --module <m>` |

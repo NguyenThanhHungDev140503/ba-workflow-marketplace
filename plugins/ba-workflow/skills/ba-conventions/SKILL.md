@@ -57,6 +57,7 @@ echo "$(date +%F),<event>,<module>,<detail>" >> ba-workspace/<slug>/events.csv
 | `claim` | collab | tên người nhận |
 | `status` | collab, impact | `từ>đến` (vd `Đang soạn>Chờ review`) |
 | `gate` | gate | `VERDICT;điểm;số lỗi cứng` |
+| `flow` | flow | `phủ%;số sơ đồ` |
 | `tests` | testgen | `phủ%;số TC` |
 | `check` | consistency | `H;M;L` (số lỗi còn lại) |
 | `cr` | impact | `CR-nnn` |

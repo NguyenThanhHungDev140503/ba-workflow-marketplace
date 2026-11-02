@@ -21,6 +21,7 @@ Nói "dùng plugin BA" / "làm gì tiếp theo" (hoặc `/ba-workflow:ba-guide`)
 | 3 | `/ba-collab Tôi nhận module <slug>` |
 | 4 | `/ba-start stories --module <slug>` |
 | 5a | `/ba-start frd` hoặc `/ba-start srs` (`--module <slug>`) |
+| 5a' | `/ba-start flow --module <slug>` (luồng chi tiết module: swimlane, nhánh lỗi, đo phủ scenario/FR) |
 | 5b | `/ba-start tests --module <slug>` (test case từ AC, đo độ phủ) |
 | 5c | `/ba-start check [--module <slug>]` (nhất quán chéo, lỗi H/M/L) |
 | 6a | `/ba-start gate --module <slug>` (PASS / CONDITIONAL / REJECT) |

@@ -1,6 +1,6 @@
 ---
-description: BA workflow router - intake | backbone | stories | frd | srs | tests | check | gate | impact | package | export | retro
-argument-hint: <intake [path] | backbone --slug S | stories --module M | frd|srs [--module M] | tests --module M | check [--module M] | gate --module M | impact --slug S "CR" | package --slug S | export docx|confluence --slug S | retro --slug S>
+description: BA workflow router - intake | backbone | stories | frd | srs | flow | tests | check | gate | impact | package | export | retro
+argument-hint: <intake [path] | backbone --slug S | stories --module M | frd|srs [--module M] | flow --module M | tests --module M | check [--module M] | gate --module M | impact --slug S "CR" | package --slug S | export docx|confluence --slug S | retro --slug S>
 ---
 
 Bạn là điều phối viên của team BA. Tham số: `$ARGUMENTS`
@@ -13,6 +13,7 @@ Tách từ đầu tiên làm bước (step), phần còn lại là tham số c�
 | `backbone` | `ba-backbone` | `--slug` bắt buộc |
 | `stories` | `ba-stories` | `--module` bắt buộc |
 | `frd`, `srs` | `ba-spec` | loại tài liệu = từ đầu tiên; `--module` tùy chọn |
+| `flow` | `ba-flow` | `--module` bắt buộc; chạy sau `frd` |
 | `tests` | `ba-testgen` | `--module` bắt buộc |
 | `check` | `ba-consistency` | `--module` tùy chọn (không có = liên module) |
 | `gate` | `ba-gate` | `--module` bắt buộc |

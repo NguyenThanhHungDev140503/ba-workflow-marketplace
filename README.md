@@ -9,7 +9,7 @@ Marketplace Claude Code `ba-team` chứa plugin **ba-workflow**: quy trình làm
 claude plugin marketplace add NguyenThanhHungDev140503/ba-workflow-marketplace
 claude plugin install ba-workflow@ba-team
 ```
-Repo đang private: máy cài cần đăng nhập GitHub có quyền (ví dụ `gh auth login`). Trong phiên Claude Code đang mở, chạy `/reload-plugins`.
+Trong phiên Claude Code đang mở, chạy `/reload-plugins`.
 
 Yêu cầu: `python3` (hook, độ phủ test, retro), `git` (phân công module). Tùy chọn: `pandoc` (export DOCX, gói HTML), `mmdc` (render Mermaid), Atlassian MCP đã xác thực qua `/mcp` (export Confluence).
 
@@ -30,6 +30,7 @@ Hai vai: **Lead BA** dựng khung và duyệt, **BA** nhận từng module.
 | 3 | `/ba-collab Tôi nhận module <slug>` | branch `ba/<slug>/<module>`, ghi owner |
 | 4 | `/ba-start stories --module <slug>` | user story + Gherkin, mỗi scenario có ID |
 | 5a | `/ba-start frd` / `srs` (`--module`) | đặc tả nghiệp vụ / kỹ thuật |
+| 5a' | `/ba-start flow --module <slug>` | luồng chi tiết module (Mermaid swimlane, nhánh lỗi), đo phủ scenario/FR |
 | 5b | `/ba-start tests --module <slug>` | test case từ AC, đo độ phủ |
 | 5c | `/ba-start check [--module <slug>]` | kiểm nhất quán chéo, lỗi H/M/L |
 | 6a | `/ba-start gate --module <slug>` | PASS / CONDITIONAL / REJECT |

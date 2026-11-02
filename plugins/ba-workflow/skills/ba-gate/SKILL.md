@@ -28,7 +28,8 @@ Nạp skill `ba-conventions` trước. Tham số: `--module <slug>` (bắt buộ
 
 Hạ bậc (không đổi điểm, không đổi trọng số): PASS hạ thành CONDITIONAL khi
 - có `tests/` và độ phủ scenario < 90% (tính theo `ba-testgen`), hoặc
-- `consistency-report.md` còn lỗi **H** chưa sửa.
+- `consistency-report.md` còn lỗi **H** chưa sửa, hoặc
+- có `spec/flows.md` và còn scenario/FR chưa xuất hiện trong sơ đồ nào mà chưa được giải thích ở mục "Không vẽ" (tính bằng đoạn lệnh của `ba-flow`).
 Chưa có `tests/` hoặc báo cáo consistency thì ghi "chưa chạy" trong gate-report, không hạ bậc. Báo cáo consistency/test cũ hơn stories/spec (so thời gian sửa file) thì ghi "đã cũ", không tính.
 
 ## Tạo `modules/<module>/gate-report.md`
